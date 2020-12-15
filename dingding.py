@@ -53,13 +53,12 @@ def send_webhook(token, secret, subject, message):
     """
     webhook = "https://oapi.dingtalk.com/robot/send?access_token={0}".format(token)  # 说明：这里改为自己创建的机器人的webhook的值
     data = {
-        "msgtype": "markdown",
-        "markdown": {
-            "title": "NCCC正线环境报警：{0}".format(subject),
+        "msgtype": "text",
+        "text": {
             "text": message
         },
         "at": {
-            "isAtAll": True
+            "isAtAll": False
         }
     }
     headers = {'Content-Type': 'application/json'}
