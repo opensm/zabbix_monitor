@@ -55,7 +55,7 @@ def send_webhook(token, secret, subject, message):
     data = {
         "msgtype": "text",
         "text": {
-            "text": message
+            "content": message
         },
         "at": {
             "isAtAll": False
